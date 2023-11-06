@@ -1,7 +1,7 @@
+"use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -14,7 +14,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const changeColor = () => {
-      if (window.scroll >= 90) {
+      if (window.scrollY >= 90) {
         setColor("#ffffff");
         setTextColor("#000000");
       } else {
@@ -32,7 +32,9 @@ const Navbar = () => {
     >
       <div className="max-w-[1240px] m-auto flex justify-between items-center p-4 text-white">
         <Link href="/">
-          <h1 className="font-bold text-4xl">capture</h1>
+          <h1 style={{ color: `${textColor}` }} className="font-bold text-4xl">
+            capture
+          </h1>
         </Link>
         <ul style={{ color: `${textColor}` }} className="hidden sm:flex ">
           <li className="p-4">
@@ -76,21 +78,18 @@ const Navbar = () => {
             <li
               onClick={handelNav}
               className="p-4 text-4xl hover:text-gray-500"
-              text-4xl
             >
               <Link href="/#gallery">Gallery</Link>
             </li>
             <li
               onClick={handelNav}
               className="p-4 text-4xl hover:text-gray-500"
-              text-4xl
             >
               <Link href="/work">Work</Link>
             </li>
             <li
               onClick={handelNav}
               className="p-4 text-4xl hover:text-gray-500"
-              text-4xl
             >
               <Link href="/contact">Contact</Link>
             </li>
